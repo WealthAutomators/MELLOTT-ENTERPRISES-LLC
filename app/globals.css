@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
-  --foreground: #1f2937;
-  --primary: #7c3aed;
+  --background: #f1f3f2;
+  --foreground: #172126;
+  --primary: #263238;
   --primary-foreground: #ffffff;
-  --accent: #f59e0b;
-  --accent-foreground: #ffffff;
-  --pink: #ec4899;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
-  --border: #e5e7eb;
-  --ring: #7c3aed;
+  --secondary: #d97706;
+  --secondary-foreground: #ffffff;
+  --accent: #84cc16;
+  --accent-foreground: #263238;
+  --muted: #e8ebec;
+  --muted-foreground: #69757a;
+  --border: #cdd3d5;
+  --ring: #263238;
   --card: #ffffff;
-  --radius: 12px;
+  --radius: 6px;
 }
 
 @theme inline {
@@ -21,23 +22,33 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-pink: var(--pink);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
   --color-card: var(--card);
   --font-sans: var(--font-inter);
-  --radius-lg: 12px;
-  --radius-xl: 12px;
+  --font-display: var(--font-space-grotesk);
+  --radius-lg: 6px;
+  --radius-xl: 8px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-space-grotesk), var(--font-inter), system-ui, sans-serif;
 }
 
 @keyframes accordion-down {
@@ -68,4 +79,18 @@ html {
 
 body {
   overflow-x: hidden;
+}
+
+.utility-rail {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.utility-rail::-webkit-scrollbar {
+  height: 4px;
+}
+
+.utility-rail::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
 }

@@ -95,7 +95,7 @@ export const ProductCard = memo(function ProductCard({ product, className }: Pro
               onClick={() => toggleWishlist(product.id)}
               aria-label={inWishlist ? "Remove from wishlist" : "Add to wishlist"}
             >
-              <Heart className={cn("h-4 w-4 transition-colors", inWishlist && "fill-accent text-accent")} />
+              <Heart className={cn("h-4 w-4 transition-colors", inWishlist && "fill-secondary text-secondary")} />
             </Button>
             <Button
               variant="secondary"
@@ -140,7 +140,7 @@ export const ProductCard = memo(function ProductCard({ product, className }: Pro
           <div className="mt-auto flex items-center gap-2">
             {hasDiscount ? (
               <>
-                <span className="text-sm font-semibold text-accent">{formatPrice(product.salePrice!)}</span>
+                <span className="text-sm font-semibold text-secondary">{formatPrice(product.salePrice!)}</span>
                 <span className="text-sm text-muted-foreground line-through">{formatPrice(product.price)}</span>
               </>
             ) : (

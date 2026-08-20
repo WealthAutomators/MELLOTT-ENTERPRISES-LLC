@@ -76,7 +76,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             <div className="mt-6 flex flex-wrap items-center gap-3">
               {hasDiscount ? (
                 <>
-                  <span className="text-3xl font-semibold text-accent">
+                  <span className="text-3xl font-semibold text-secondary">
                     {formatPrice(product.salePrice!)}
                   </span>
                   <span className="text-xl text-muted-foreground line-through">
@@ -138,7 +138,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 aria-label={inWishlist ? "Remove from wishlist" : "Add to wishlist"}
                 className="transition-transform active:scale-95"
               >
-                <Heart className={`h-4 w-4 transition-colors ${inWishlist ? "fill-accent text-accent" : ""}`} />
+                <Heart className={`h-4 w-4 transition-colors ${inWishlist ? "fill-secondary text-secondary" : ""}`} />
               </Button>
             </div>
 

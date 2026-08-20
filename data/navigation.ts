@@ -1,8 +1,13 @@
 import { NavLink } from "@/types";
 import { categories } from "./categories";
 
+export const topStripLinks: NavLink[] = [
+  { label: "Support", href: "/contact" },
+  { label: "Orders", href: "/track-order" },
+  { label: "Account", href: "/profile" },
+];
+
 export const navigationLinks: NavLink[] = [
-  { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
   {
     label: "Categories",
@@ -14,24 +19,38 @@ export const navigationLinks: NavLink[] = [
   },
   { label: "New Arrivals", href: "/new-arrivals" },
   { label: "Best Sellers", href: "/best-sellers" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Deals", href: "/shop?sale=true" },
 ];
 
+export const categoryRailLinks: NavLink[] = categories.map((c) => ({
+  label: c.name,
+  href: `/categories/${c.slug}`,
+}));
+
 export const footerLinks = {
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "Careers", href: "/contact" },
-    { label: "FAQs", href: "/faq" },
+  shop: [
+    { label: "All Products", href: "/shop" },
+    { label: "New Arrivals", href: "/new-arrivals" },
+    { label: "Best Sellers", href: "/best-sellers" },
+    { label: "Deals", href: "/shop?sale=true" },
   ],
+  categories: categories.slice(0, 6).map((c) => ({
+    label: c.name,
+    href: `/categories/${c.slug}`,
+  })),
   customerCare: [
     { label: "Track Order", href: "/track-order" },
     { label: "Returns", href: "/returns" },
     { label: "Shipping Policy", href: "/shipping" },
+    { label: "FAQs", href: "/faq" },
     { label: "Support", href: "/contact" },
   ],
-  legal: [
+  company: [
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "Careers", href: "/contact" },
+  ],
+  policies: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/terms" },
     { label: "Refund Policy", href: "/refund" },

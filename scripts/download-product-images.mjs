@@ -25,32 +25,33 @@ function loadEnvLocal() {
 
 /** Tailored search terms for better product-relevant results */
 const SEARCH_QUERIES = {
-  "wireless-earbuds": "wireless earbuds product",
-  "bluetooth-speaker": "portable bluetooth speaker",
-  "smart-power-strip": "smart power strip surge protector",
-  "electric-kettle": "electric glass kettle",
-  "air-fryer": "digital air fryer kitchen",
-  "coffee-grinder": "burr coffee grinder",
   "bath-towel-set": "luxury bath towel set",
-  "shower-caddy-organizer": "shower caddy organizer",
-  "kids-learning-tablet": "kids learning tablet",
-  "stem-robot-kit": "STEM robot building kit toy",
   "dog-bed": "orthopedic dog bed",
-  "pet-food-storage": "pet food storage container",
-  "vitamin-c-serum-set": "vitamin c skincare serum",
-  "hair-care-bundle": "shampoo conditioner hair care",
   "yoga-mat": "yoga mat fitness",
-  "resistance-bands-set": "resistance bands exercise",
-  "standing-desk-lamp": "LED desk lamp office",
-  "ergonomic-mouse-pad": "ergonomic mouse pad wrist rest",
-  "leather-wallet": "leather wallet mens",
-  "sunglasses-classic": "polarized sunglasses",
-  "baby-monitor": "video baby monitor",
+  "coffee-grinder": "burr coffee grinder",
   "soft-plush-blanket": "soft baby blanket plush",
-  "building-blocks-set": "building blocks toys children",
-  "board-game-family": "family board game",
-  "foam-roller": "foam roller fitness",
-  "essential-oil-diffuser": "essential oil diffuser",
+  "magnetic-car-vent-mount": "car phone vent mount magnetic",
+  "portable-label-maker": "portable label maker printer",
+  "enamel-stockpot-8qt": "enamel stockpot dutch oven",
+  "immersion-sous-vide": "sous vide immersion circulator",
+  "teak-bath-stool": "teak bath stool shower",
+  "kids-coding-robot-car": "kids coding robot toy car",
+  "wooden-number-abacus": "wooden abacus kids",
+  "automatic-pet-feeder": "automatic pet feeder",
+  "peptide-eye-cream-duo": "eye cream skincare product",
+  "dry-body-brush-set": "dry body brush wood",
+  "trail-daypack-22l": "hiking daypack backpack outdoor",
+  "compact-camping-stove": "camping stove portable",
+  "wall-monitor-light-bar": "monitor light bar desk led",
+  "accordion-file-organizer": "accordion file organizer",
+  "waxed-canvas-belt-bag": "waxed canvas belt bag fanny",
+  "silicone-teether-set": "silicone baby teether",
+  "wooden-marble-run": "wooden marble run toy",
+  "lawn-cornhole-set": "cornhole boards outdoor game",
+  "compact-massage-gun": "massage gun percussion",
+  "charcoal-odor-bags": "bamboo charcoal odor bag",
+  "modular-cube-shelves": "cube storage shelf organizer",
+  "linen-drum-table-lamp": "linen drum table lamp",
 };
 
 function parseProducts() {
@@ -101,7 +102,7 @@ async function searchPhotos(accessKey, query, perPage = 2) {
 
 async function downloadImage(url) {
   const res = await fetch(url, {
-    headers: { "User-Agent": "AAMPartnersLLC/1.0 (product-images)" },
+    headers: { "User-Agent": "MellottEnterprisesLLC/1.0 (product-images)" },
     redirect: "follow",
   });
   if (!res.ok) throw new Error(`Download HTTP ${res.status}`);

@@ -12,40 +12,39 @@ export function Newsletter() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
-      setEmail("");
-    }
+    if (!email.trim()) return;
+    setSubmitted(true);
+    setEmail("");
   };
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="bg-primary py-14 md:py-16">
       <Container>
-        <div className="relative overflow-hidden rounded-xl px-6 py-12 text-center md:px-16 md:py-16">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-purple-900" />
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/5" />
-          <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-accent/10" />
-          <div className="relative">
-            <h2 className="text-2xl font-semibold tracking-tight text-white md:text-3xl">{newsletter.title}</h2>
-            <p className="mx-auto mt-3 max-w-lg text-white/80">{newsletter.description}</p>
-            {submitted ? (
-              <p className="mt-8 text-sm font-medium text-accent">Thank you for subscribing!</p>
-            ) : (
-              <form onSubmit={handleSubmit} className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
-                <Input
-                  type="email"
-                  placeholder={newsletter.placeholder}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 border-white/20 bg-white/10 text-white placeholder:text-white/50 backdrop-blur-sm"
-                />
-                <Button type="submit" size="lg" variant="accent" className="shrink-0">
-                  {newsletter.buttonText}
-                </Button>
-              </form>
-            )}
-          </div>
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+            {newsletter.title}
+          </h2>
+          <p className="mt-3 text-white/70">{newsletter.description}</p>
+
+          {submitted ? (
+            <p className="mt-8 rounded-md border border-accent/40 bg-accent/15 px-4 py-3 text-sm font-medium text-accent-foreground">
+              You&apos;re on the list. Good finds incoming.
+            </p>
+          ) : (
+            <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Input
+                type="email"
+                required
+                placeholder={newsletter.placeholder}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="h-12 flex-1 rounded-md border-white/20 bg-white text-foreground"
+              />
+              <Button type="submit" size="lg" className="h-12 shrink-0">
+                {newsletter.buttonText}
+              </Button>
+            </form>
+          )}
         </div>
       </Container>
     </section>

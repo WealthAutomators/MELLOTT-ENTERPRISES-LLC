@@ -110,7 +110,7 @@ export function WriteReviewForm({ onSubmit }: WriteReviewFormProps) {
                   className={cn(
                     "h-6 w-6 transition-colors",
                     (hoverRating || rating) >= star
-                      ? "fill-accent text-accent"
+                      ? "fill-secondary text-secondary"
                       : "fill-muted text-muted"
                   )}
                 />
