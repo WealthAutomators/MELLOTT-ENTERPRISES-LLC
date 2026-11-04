@@ -45,7 +45,7 @@ export function DealBoard() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {deals.map((product) => {
             const discount =
               product.salePrice && product.salePrice < product.price
@@ -55,7 +55,7 @@ export function DealBoard() {
             return (
               <div
                 key={product.id}
-                className="flex gap-4 rounded-md border border-white/10 bg-white/5 p-3 backdrop-blur-sm transition-colors hover:bg-white/[0.08]"
+                className="flex min-w-0 gap-3 sm:gap-4 rounded-md border border-white/10 bg-white/5 p-3 backdrop-blur-sm transition-colors hover:bg-white/[0.08]"
               >
                 <Link
                   href={`/product/${product.slug}`}
